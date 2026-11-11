@@ -1,0 +1,100 @@
+---
+// why-invest.astro - Why Invest page
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sreemitra - Why Invest" currentPath="why-invest.html" description="More than a developer. A growth partner. Discover why investors choose Sreemitra for strategic land investments in Hyderabad and Visakhapatnam.">
+
+  <!-- Main Canvas -->
+  <main class="flex-grow pt-32 md:pt-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <!-- Hero Section -->
+    <section class="mb-24 md:mb-32 text-center md:text-left flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/2 flex flex-col gap-6">
+        <p class="font-label-caps text-label-caps uppercase tracking-widest text-brass-accent">Why Invest With Sreemitra</p>
+        <h1 class="font-urbanist text-display-lg text-charcoal leading-tight hidden md:block">
+          More Than a Developer.<br>A Growth Partner.
+        </h1>
+        <h1 class="font-urbanist text-headline-lg-mobile text-charcoal leading-tight md:hidden">
+          More Than a Developer. A Growth Partner.
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+          We combine land, research, and execution into one offering, ensuring your legacy is built on solid ground.
+        </p>
+      </div>
+      <div class="md:w-1/2 w-full h-[400px] editorial-border p-2 bg-surface-container-low">
+        <div class="w-full h-full bg-cover bg-center"
+          data-alt="A serene, highly detailed architectural visualization of a premium land development project"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZDyJ0zKbTZkPPIGrInxqDTktHwfBwI_zKqJY4jSl7R3slPQzJUfsMRL5FYqc_9xs9udP2NuOqCoRbJKue3vK26EdtR2hiK5Yt6EkhvIK3bOKsczmrlhzd3hTfTJvU72gX9CNxfNVDXmBM7g8ucfATdyZs8Ds2FqEVVk6mjqIIiIQK2Ds88uZC6TXb3U2HcGxOcPWEYpVjwgFSwqGI9jcVKejYMVP-45bvxmU2kyZMYJdLe2_6dxAO')">
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid / Asymmetric Values Section -->
+    <section class="mb-24 md:mb-32">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter">
+        <!-- Card 1: Strategic Land Identification (Large) -->
+        <div class="md:col-span-8 p-8 md:p-12 flex flex-col justify-between editorial-border group hover:bg-surface transition-colors duration-500 bg-surface-container-lowest">
+          <div>
+            <span class="material-symbols-outlined text-brass-accent mb-6 block" data-weight="fill" style="font-size: 32px;">landscape</span>
+            <h2 class="font-headline-md text-headline-md text-charcoal mb-4">Strategic Land Identification</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+              Our research-driven approach ensures we acquire parcels in high-growth corridors before the market recognizes their true value. We analyze infrastructure pipelines and demographic shifts to secure prime positioning.
+            </p>
+          </div>
+          <div class="mt-8 border-t border-surface-variant pt-6 flex justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="material-symbols-outlined text-charcoal">arrow_forward</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Development Expertise (Tall/Narrow) -->
+        <div class="md:col-span-4 bg-charcoal text-cream-surface p-8 md:p-12 flex flex-col justify-between">
+          <div>
+            <span class="material-symbols-outlined text-cream-surface mb-6 block" data-weight="fill" style="font-size: 32px;">architecture</span>
+            <h2 class="font-headline-md text-headline-md text-cream-surface mb-4">Development Expertise</h2>
+            <p class="font-body-md text-body-md text-surface-variant opacity-80">
+              Transforming raw earth into premium, ready-to-build estates. Our master planning emphasizes sustainable infrastructure, generous public realms, and uncompromising quality.
+            </p>
+          </div>
+          <div class="mt-8 w-full h-48 bg-inverse-surface">
+            <div class="w-full h-full bg-cover bg-center opacity-70 mix-blend-luminosity"
+              data-alt="A close-up, abstract architectural detail shot showing precise master-planning blueprints"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwNlA_dLvqbps8smyGh549K2ZiAdvZTebciHusFY2ju2StNCM9z9zY3OzSfwYzZrfobYYRdQMd0sgbfda51VnGjLdlaW2D_MWN3yp9rk01DZPmsxVw7MwvN2Aa74ggPhRlzAcxqIR3O37JO1mqJHgnCwrHRA_CsfkPFlE9Se8Z-SATcf9bXr4Zd5YHBKf-CyIV1aPJRiNwP0rUeVNVMq28_9nVA9BELpDAaeMlj4CRc1luqST6BasM')">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Transparent Documentation (Square) -->
+        <div class="md:col-span-5 p-8 md:p-10 editorial-border flex flex-col justify-center bg-surface-container-low">
+          <span class="material-symbols-outlined text-primary mb-6 block" data-weight="fill" style="font-size: 32px;">description</span>
+          <h2 class="font-headline-md text-headline-md text-charcoal mb-4">Transparent Documentation</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <span class="gold-bullet">01</span>
+              <span class="font-body-md text-body-md text-on-surface-variant">Clear titles vetted by top-tier legal counsel.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="gold-bullet">02</span>
+              <span class="font-body-md text-body-md text-on-surface-variant">RERA compliant and fully approved layouts.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="gold-bullet">03</span>
+              <span class="font-body-md text-body-md text-on-surface-variant">Seamless transfer and registration processes.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Long-Term Value Mindset (Wide) -->
+        <div class="md:col-span-7 p-8 md:p-12 flex items-center gap-8 editorial-border bg-surface-container-high">
+          <div class="flex-grow">
+            <span class="material-symbols-outlined text-brass-accent mb-4 block" data-weight="fill" style="font-size: 32px;">trending_up</span>
+            <h2 class="font-headline-md text-headline-md text-charcoal mb-4">Long-Term Value Mindset</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              We don't just sell plots; we curate intergenerational assets. Our post-purchase ecosystem ensures your land is maintained, secured, and primed for substantial appreciation over decades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</BaseLayout>

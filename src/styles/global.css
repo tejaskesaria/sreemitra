@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-container-low: #f3f3f3;
+  --color-tertiary: #000000;
+  --color-surface-container-high: #e8e8e8;
+  --color-cream-surface: #F7F7F7;
+  --color-on-tertiary: #ffffff;
+  --color-secondary-container: #f2eb46;
+  --color-inverse-primary: #c6c6c6;
+  --color-surface-bright: #f9f9f9;
+  --color-tertiary-fixed-dim: #a2caf9;
+  --color-primary-fixed-dim: #c6c6c6;
+  --color-on-primary-fixed: #1b1b1b;
+  --color-on-error: #ffffff;
+  --color-on-primary-container: #848484;
+  --color-on-tertiary-container: #6087b3;
+  --color-surface: #f9f9f9;
+  --color-on-error-container: #93000a;
+  --color-tertiary-container: #001d35;
+  --color-surface-dim: #dadada;
+  --color-primary-fixed: #e2e2e2;
+  --color-background: #f9f9f9;
+  --color-error: #ba1a1a;
+  --color-inverse-surface: #2f3131;
+  --color-surface-variant: #e2e2e2;
+  --color-on-surface-variant: #4c4546;
+  --color-outline-variant: #cfc4c5;
+  --color-secondary-fixed: #ffdcbe;
+  --color-surface-container-lowest: #ffffff;
+  --color-charcoal: #121212;
+  --color-primary-container: #1b1b1b;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #474747;
+  --color-on-tertiary-fixed-variant: #1e4971;
+  --color-secondary: #895109;
+  --color-on-surface: #1a1c1c;
+  --color-surface-container-highest: #e2e2e2;
+  --color-tertiary-fixed: #d1e4ff;
+  --color-surface-container: #eeeeee;
+  --color-on-secondary-container: #0c3c46;
+  --color-on-background: #1a1c1c;
+  --color-outline: #7e7576;
+  --color-on-secondary-fixed: #2c1600;
+  --color-surface-tint: #5e5e5e;
+  --color-serene-blue: #759CC9;
+  --color-brass-accent: #27904d;
+  --color-on-secondary-fixed-variant: #693c00;
+  --color-on-secondary: #ffffff;
+  --color-inverse-on-surface: #f1f1f1;
+  --color-error-container: #ffdad6;
+  --color-secondary-fixed-dim: #ffb870;
+  --color-primary: #000000;
+  --color-on-tertiary-fixed: #001d35;
+  --color-obsidian: #1E1E1E;
+  --color-muted-gold: #BD9D54;
+  --color-parchment: #EAE5D4;
+  --color-sage-deep: #757A60;
+
+  --spacing-gutter: 32px;
+  --spacing-section-gap: 120px;
+  --spacing-margin-mobile: 20px;
+  --spacing-unit: 8px;
+  --spacing-margin-desktop: 80px;
+  --spacing-container-max: 1440px;
+
+  --font-urbanist: 'Urbanist', sans-serif;
+  --font-body-md: 'Urbanist', sans-serif;
+  --font-button-text: 'Urbanist', sans-serif;
+  --font-display-lg: 'Urbanist', sans-serif;
+  --font-headline-lg: 'Urbanist', sans-serif;
+  --font-body-lg: 'Urbanist', sans-serif;
+  --font-headline-md: 'Urbanist', sans-serif;
+  --font-headline-lg-mobile: 'Urbanist', sans-serif;
+  --font-label-caps: 'Urbanist', sans-serif;
+  --font-label-md: 'Urbanist', sans-serif;
+  --font-label-sm: 'Urbanist', sans-serif;
+}
+
+/* Custom Utility Classes for Typography */
+@utility text-body-md {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+@utility text-button-text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+@utility text-display-lg {
+  font-size: 72px;
+  line-height: 80px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+@utility text-headline-lg {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 600;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+@utility text-headline-md {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+}
+@utility text-headline-lg-mobile {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+}
+@utility text-label-caps {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+@utility text-label-md {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+@utility text-label-sm {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+/* Lenis Smooth Scroll */
+.lenis, .lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Material Symbols Outlined Icon Customizations */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Page Containers & Base Typography */
+body {
+  background-color: #f9f9f9;
+  color: #111111;
+  font-family: var(--font-urbanist);
+}
+.page-container {
+  background-color: #f9f9f9;
+}
+.editorial-border {
+  border: 1px solid #e2e2e2;
+}
+.gold-bullet {
+  color: #0c3c46;
+  font-family: 'Urbanist', sans-serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+.shadow-ambient {
+  box-shadow: 0 12px 32px rgba(12, 60, 70, 0.08);
+}
+
+/* Brand Buttons & Primary CTAs */
+.btn-brand,
+button[type="submit"],
+.bg-brand-teal {
+  background-color: #0c3c46 !important;
+  color: #ffffff !important;
+}
+.btn-brand:hover,
+button[type="submit"]:hover,
+.bg-brand-teal:hover {
+  background-color: #082930 !important;
+}
+.text-brand-teal { color: #0c3c46 !important; }
+.border-brand-teal { border-color: #0c3c46 !important; }
+.bg-brand-yellow { background-color: #ffe94f !important; color: #111111 !important; }
+.text-brand-yellow { color: #ffe94f !important; }
+.bg-brand-green { background-color: #27904d !important; color: #ffffff !important; }
+.text-brand-green { color: #27904d !important; }
+.border-brand-green { border-color: #27904d !important; }
+
+/* Form Controls (Contact Us & Connect forms) */
+.input-underline {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #cfc4c5;
+  border-radius: 0;
+  padding: 16px 0;
+  transition: border-color 0.3s ease;
+}
+.input-underline:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #0c3c46;
+}
+.custom-radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cfc4c5;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.custom-radio:checked {
+  border-color: #0c3c46;
+}
+.custom-radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #0c3c46;
+  border-radius: 50%;
+}
+
+/* Navigation & Mobile Drawer */
+header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+header.scrolled {
+  box-shadow: 0 4px 20px rgba(12, 60, 70, 0.08);
+}
+
+/* Mobile Nav Modal / Drawer */
+#mobile-menu {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#mobile-menu.hidden-menu {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#mobile-menu.visible-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Animation utilities for GSAP */
+.gsap-fade-in {
+  will-change: transform, opacity;
+}
+
+/* Header Logo & Nav Button Custom Styles */
+.nav-logo-img {
+  height: 2.75rem;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+@media (min-width: 768px) {
+  .nav-logo-img {
+    height: 3.25rem;
+  }
+}
+.nav-logo-img:hover {
+  opacity: 0.92;
+  transform: scale(1.02);
+}
+
+/* Navbar Contact Us Button */
+.nav-btn-contact {
+  background-color: #27904d;
+  color: #ffffff !important;
+  padding: 0.55rem 1.35rem;
+  border-radius: 9999px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(39, 144, 77, 0.25);
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-btn-contact:hover {
+  background-color: #1e753d;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(39, 144, 77, 0.38);
+}
+.nav-btn-contact:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 6px rgba(39, 144, 77, 0.3);
+}
+
+/* Mobile Nav Drawer Contact Button */
+.mobile-nav-btn-contact {
+  background-color: #27904d;
+  color: #ffffff !important;
+  padding: 0.7rem 2rem;
+  border-radius: 9999px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem auto 0 auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(39, 144, 77, 0.25);
+  text-decoration: none;
+}
+.mobile-nav-btn-contact:hover {
+  background-color: #1e753d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(39, 144, 77, 0.35);
+}

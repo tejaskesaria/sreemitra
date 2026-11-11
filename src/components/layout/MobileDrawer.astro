@@ -1,0 +1,34 @@
+---
+// MobileDrawer.astro - Reusable mobile navigation drawer
+const navLinks = [
+  { href: '/about-us.html', label: 'About Us' },
+  { href: '/why-invest.html', label: 'Why Invest in Sreemitra' },
+  { href: '/investment-opportunities.html', label: 'Investment Opportunities' },
+  { href: '/growth-corridors.html', label: 'Growth Corridors' },
+  { href: '/nri-corner.html', label: 'NRI Corner' },
+  { href: '/projects.html', label: 'Projects' },
+];
+---
+
+<!-- Mobile Navigation Drawer -->
+<div class="hidden-menu fixed inset-0 z-50 bg-surface/95 backdrop-blur-2xl flex flex-col justify-between p-8" id="mobile-menu">
+  <div class="flex justify-between items-center pb-6 border-b border-outline-variant">
+    <a class="flex items-center" href="/index.html">
+      <img src="/images/Sreemitra-Logo.png" alt="Sreemitra Logo" class="h-9 w-auto object-contain">
+    </a>
+    <button aria-label="Close Menu" class="text-primary p-2 focus:outline-none" id="mobile-menu-close">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+  </div>
+  <nav class="flex flex-col gap-6 my-auto text-center">
+    {navLinks.map(link => (
+      <a class="font-label-caps text-lg uppercase tracking-widest text-on-background/80 hover:text-primary transition-colors" href={link.href}>
+        {link.label}
+      </a>
+    ))}
+    <a class="mobile-nav-btn-contact" href="/contact-us.html">Contact Us</a>
+  </nav>
+  <div class="text-center text-xs text-on-surface-variant pt-6 border-t border-outline-variant">
+    © 2024 Sreemitra Investments. All rights reserved.
+  </div>
+</div>

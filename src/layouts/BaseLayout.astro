@@ -1,0 +1,241 @@
+---
+// BaseLayout.astro - Main layout with transitions
+import Header from '../components/layout/Header.astro';
+import MobileDrawer from '../components/layout/MobileDrawer.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPath?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title,
+  description = "Plots & townships in Hyderabad & Visakhapatnam, developed since 1994. Approvals & title papers shared before you book.",
+  currentPath = '',
+  canonicalURL
+} = Astro.props;
+
+const pagePath = Astro.url.pathname;
+const pathName = pagePath.split('/').pop() || 'index.html';
+const activePath = currentPath || pathName;
+const pageUrl = new URL(Astro.url.origin + Astro.url.pathname);
+const finalCanonical = canonicalURL || pageUrl.toString();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={finalCanonical} />
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css" rel="stylesheet">
+  <ClientRouter />
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
+  <Header currentPath={activePath} />
+  <MobileDrawer />
+  <main class="flex-grow">
+    <slot />
+  </main>
+  <Footer />
+
+  <script>
+    import Lenis from 'lenis';
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    function initPageAnimations() {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+        });
+
+        function raf(time: number) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        gsap.registerPlugin(ScrollTrigger);
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+
+        const heroTitle = document.querySelector('main h1');
+        const heroDesc = document.querySelector('main section p');
+        const heroButtons = document.querySelectorAll('main section button, main section a.btn');
+
+        if (heroTitle) {
+            gsap.from(heroTitle, { opacity: 0, y: 40, duration: 1, ease: 'power3.out' });
+        }
+        if (heroDesc) {
+            gsap.from(heroDesc, { opacity: 0, y: 30, duration: 1, delay: 0.2, ease: 'power3.out' });
+        }
+        if (heroButtons.length > 0) {
+            gsap.from(heroButtons, { opacity: 0, y: 20, duration: 0.8, delay: 0.4, stagger: 0.15, ease: 'power3.out' });
+        }
+
+        const sectionTitles = document.querySelectorAll('main h2');
+        sectionTitles.forEach(title => {
+            gsap.from(title, {
+                scrollTrigger: { trigger: title, start: 'top 85%' },
+                opacity: 0, y: 30, duration: 0.8, ease: 'power3.out'
+            });
+        });
+
+        const cards = document.querySelectorAll('.grid > div, main section > div.grid > div');
+        if (cards.length > 0) {
+            ScrollTrigger.batch(cards, {
+                start: 'top 88%',
+                once: true,
+                onEnter: (batch) => gsap.from(batch, { opacity: 0, y: 40, duration: 0.8, stagger: 0.15, ease: 'power3.out' })
+            });
+        }
+
+        const header = document.querySelector('header');
+        if (header) {
+          const handleScroll = () => {
+            if (window.scrollY > 20) {
+              header.classList.add('scrolled');
+              header.style.backgroundColor = 'rgba(249, 249, 249, 0.95)';
+            } else {
+              header.classList.remove('scrolled');
+              header.style.backgroundColor = 'rgba(249, 249, 249, 0.8)';
+            }
+          };
+          window.addEventListener('scroll', handleScroll, { passive: true });
+          handleScroll();
+        }
+
+        const openBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menu = document.getElementById('mobile-menu');
+        if (menu) {
+          const openMenu = () => {
+            menu.classList.remove('hidden-menu');
+            menu.classList.add('visible-menu');
+            document.body.style.overflow = 'hidden';
+          };
+          const closeMenu = () => {
+            menu.classList.remove('visible-menu');
+            menu.classList.add('hidden-menu');
+            document.body.style.overflow = '';
+          };
+          if (openBtn) openBtn.onclick = openMenu;
+          if (closeBtn) closeBtn.onclick = closeMenu;
+          const mobileLinks = menu.querySelectorAll('a');
+          mobileLinks.forEach(link => { link.onclick = closeMenu; });
+        }
+
+        const counterElements = document.querySelectorAll('.stat-counter');
+        if (counterElements.length) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const el = entry.target as HTMLElement;
+                const target = parseInt(el.getAttribute('data-target') || '0', 10);
+                const prefix = el.getAttribute('data-prefix') || '';
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                const startTime = performance.now();
+                const updateCounter = (currentTime: number) => {
+                  const elapsedTime = currentTime - startTime;
+                  const progress = Math.min(elapsedTime / duration, 1);
+                  const easeProgress = 1 - (1 - progress) * (1 - progress);
+                  const currentCount = Math.floor(easeProgress * target);
+                  el.textContent = `${prefix}${currentCount}${suffix}`;
+                  if (progress < 1) requestAnimationFrame(updateCounter);
+                  else el.textContent = `${prefix}${target}${suffix}`;
+                };
+                requestAnimationFrame(updateCounter);
+                observer.unobserve(el);
+              }
+            });
+          }, { threshold: 0.3 });
+          counterElements.forEach(el => observer.observe(el));
+        }
+
+        const slides = document.querySelectorAll('.trust-slide');
+        const dots = document.querySelectorAll('.trust-dot');
+        const prevBtn = document.getElementById('trust-prev-btn');
+        const nextBtn = document.getElementById('trust-next-btn');
+        const sliderWrapper = document.querySelector('.trust-slider-wrapper') || document.querySelector('#enduring-trust-section');
+        if (slides.length) {
+          let currentIndex = 0;
+          let timer: any;
+
+          // Ensure wrapper has proper positioning for absolute buttons
+          if (sliderWrapper) {
+            sliderWrapper.classList.add('relative');
+          }
+
+          const showSlide = (index: number) => {
+            slides.forEach((s, i) => {
+              if (i === index) {
+                s.classList.remove('hidden');
+                s.classList.add('block');
+              } else {
+                s.classList.remove('block');
+                s.classList.add('hidden');
+              }
+            });
+            dots.forEach((d: any, i) => {
+              d.style.backgroundColor = i === index ? '#0c3c46' : '#cfc4c5';
+              d.classList.toggle('scale-125', i === index);
+            });
+            currentIndex = index;
+          };
+
+          // Initialize first slide
+          showSlide(0);
+
+          const next = () => showSlide((currentIndex + 1) % slides.length);
+          const prev = () => showSlide((currentIndex - 1 + slides.length) % slides.length);
+
+          if (nextBtn) nextBtn.onclick = () => { next(); resetTimer(); };
+          if (prevBtn) prevBtn.onclick = () => { prev(); resetTimer(); };
+
+          dots.forEach((dot: any, i) => {
+            dot.onclick = () => { showSlide(i); resetTimer(); };
+          });
+
+          const startTimer = () => {
+            timer = setInterval(next, 6000);
+          };
+
+          const resetTimer = () => {
+            clearInterval(timer);
+            startTimer();
+          };
+
+          startTimer();
+
+          // Pause on hover
+          const track = document.getElementById('trust-slider-track');
+          if (track) {
+            track.addEventListener('mouseenter', () => clearInterval(timer));
+            track.addEventListener('mouseleave', startTimer);
+          }
+        }
+    }
+
+    document.addEventListener('astro:page-load', () => {
+        initPageAnimations();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+---
+// Button.astro - Reusable button component
+interface Props {
+  children: any;
+  variant?: 'primary' | 'secondary' | 'outline' | 'muted-gold' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  href?: string;
+  type?: 'button' | 'submit';
+  onClick?: string;
+}
+
+const {
+  children,
+  variant = 'primary',
+  size = 'md',
+  class: className = '',
+  href,
+  type = 'button',
+  onClick
+} = Astro.props;
+
+const variants = {
+  primary: 'bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-tint transition-colors duration-300',
+  secondary: 'bg-muted-gold text-obsidian font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container-lowest transition-all duration-300 shadow-xl',
+  outline: 'bg-transparent border border-surface-variant/50 text-surface-container-lowest font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container-lowest/10 transition-all duration-300',
+  'muted-gold': 'bg-muted-gold text-obsidian font-label-md text-label-md uppercase tracking-widest hover:bg-surface-container-lowest transition-all duration-300',
+  ghost: 'bg-transparent border border-surface-variant text-surface-container-lowest font-label-md text-label-md uppercase tracking-widest hover:bg-surface-container-lowest hover:text-obsidian transition-all duration-300',
+};
+
+const sizes = {
+  sm: 'px-6 py-3 rounded',
+  md: 'px-8 py-4 rounded',
+  lg: 'px-10 py-5 rounded-full',
+};
+
+const classes = `${variants[variant]} ${sizes[size]} ${className}`;
+---
+
+{if href}
+  <a class={classes} href={href} onclick={onClick}>
+    {children}
+  </a>
+{else}
+  <button class={classes} type={type} onclick={onClick}>
+    {children}
+  </button>
+{/if}

@@ -1,0 +1,47 @@
+---
+// Header.astro - Reusable header component
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/about-us.html', label: 'About Us' },
+  { href: '/why-invest.html', label: 'Why Invest in Sreemitra' },
+  { href: '/investment-opportunities.html', label: 'Investment Opportunities' },
+  { href: '/growth-corridors.html', label: 'Growth Corridors' },
+  { href: '/nri-corner.html', label: 'NRI Corner' },
+  { href: '/projects.html', label: 'Projects' },
+];
+
+const isActive = (href: string) => {
+  const normalized = href.split('/').pop() || '';
+  return normalized === currentPath || (currentPath === '' && normalized === 'index.html');
+};
+---
+
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant">
+  <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <a class="flex items-center group py-1" href="/index.html">
+      <img src="/images/Sreemitra-Logo.png" alt="Sreemitra Logo" class="nav-logo-img">
+    </a>
+    <nav class="hidden lg:flex gap-6 xl:gap-8 items-center">
+      {navLinks.map(link => (
+        <a
+          class={`font-label-caps text-label-caps uppercase tracking-widest transition-colors duration-300 ${isActive(link.href) ? 'text-[#0c3c46] font-semibold border-b border-[#0c3c46] pb-1' : 'text-on-background/70 hover:text-primary'}`}
+          href={link.href}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <div class="hidden lg:flex items-center">
+      <a class="nav-btn-contact" href="/contact-us.html">Contact Us</a>
+    </div>
+    <!-- Mobile Menu Toggle Button -->
+    <button aria-label="Open Menu" class="lg:hidden text-primary p-2 focus:outline-none" id="mobile-menu-btn">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+  </div>
+</header>

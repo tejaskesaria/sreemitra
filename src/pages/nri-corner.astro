@@ -1,0 +1,78 @@
+---
+// nri-corner.astro - NRI Corner page
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="NRI Corner - Sreemitra" currentPath="nri-corner.html" description="Invest in Indian land from abroad with Sreemitra's NRI-friendly process. Virtual presentations, documentation guidance, progress updates, and dedicated NRI support desk.">
+
+  <main class="flex-grow pt-[120px] pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <!-- Hero Section -->
+    <section class="mb-24 md:mb-32 text-center md:text-left grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+      <div class="md:col-span-7">
+        <h1 class="font-urbanist text-display-lg text-charcoal mb-6 text-on-surface">Indian Land, NRI-Friendly Process.</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto md:mx-0">Invest from abroad with local expertise you can trust. We streamline the complexities of overseas property acquisition, offering transparent, secure, and fully managed solutions for Non-Resident Indians.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="/contact-us.html" class="inline-block px-8 py-4 bg-[#0c3c46] text-white font-button-text text-button-text uppercase tracking-widest rounded hover:bg-[#1e753d] transition-colors duration-300 shadow-md">
+            Connect with Our NRI Desk
+          </a>
+        </div>
+      </div>
+      <div class="md:col-span-5 hidden md:block">
+        <div class="w-full h-[500px] bg-surface-container-high relative overflow-hidden rounded"
+          data-alt="A high-end architectural photograph of an elegant modern building interior"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAF9TEyJOB93ZL9T_7I4Bho2PpCqV--h27-XdMboXec2SzC0X0KDRjmwHp9F-fJDQg_PvQzgtoKWeKMiQE5BCpg2-R-hefq0lY42prr-rmSlnlRbXr1V33ODq5DTIo9g1dFaEDurss38iUWe2C-wVS2YFVjbZkrpXyWh_56jvZ4ccSxwcUqs25QeZuF0dk5FBXO7OtWDv-dG3v7TIVp4EhPSOEKraS1mEF7YED9RactTOWPqFvbE8T1'); background-size: cover; background-position: center;">
+          <div class="absolute inset-0 border border-outline-variant/40 m-4 pointer-events-none rounded"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section (Bento Grid) -->
+    <section class="mb-24">
+      <div class="text-center mb-16">
+        <span class="font-label-caps text-label-caps uppercase tracking-widest text-brass-accent mb-4 block">Our Commitment</span>
+        <h2 class="font-headline-lg text-headline-lg text-charcoal text-on-surface">Seamless Overseas Investment</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <!-- Feature 1: Large Card -->
+        <div class="md:col-span-8 bg-surface-container-lowest p-10 border border-surface-container-high rounded relative group overflow-hidden transition-all duration-500 hover:shadow-ambient flex flex-col justify-end min-h-[400px] border-outline-variant">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-700"></div>
+          <span class="material-symbols-outlined text-4xl text-primary mb-6">video_camera_front</span>
+          <h3 class="font-headline-md text-headline-md text-charcoal mb-4">Virtual Presentations</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Experience our properties as if you were there. We offer comprehensive virtual tours, detailed live walkthroughs, and personalized presentations tailored to your timezone and schedule.</p>
+        </div>
+
+        <!-- Feature 2: Tall Card -->
+        <div class="md:col-span-4 bg-surface-container-lowest p-10 border border-surface-container-high rounded flex flex-col justify-between group hover:border-outline-variant/60 transition-colors duration-300 min-h-[400px] border-outline-variant">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-6">description</span>
+            <h3 class="font-headline-md text-headline-md text-charcoal mb-4">Documentation Guidance</h3>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant">Navigate complex legalities with ease. Our legal team assists with POA, KYC norms, RBI guidelines, and all necessary paperwork for cross-border transactions.</p>
+        </div>
+
+        <!-- Feature 3: Small Card -->
+        <div class="md:col-span-4 bg-surface-container-lowest p-10 border border-surface-container-high rounded hover:bg-surface-bright transition-colors duration-300 border-outline-variant">
+          <span class="material-symbols-outlined text-4xl text-primary mb-6">update</span>
+          <h3 class="font-headline-md text-headline-md text-charcoal mb-4">Progress Updates</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Stay informed at every step. Receive regular photographic updates, milestone reports, and direct communication regarding your investment's status.</p>
+        </div>
+
+        <!-- Feature 4: Wide Card -->
+        <div class="md:col-span-8 bg-surface p-10 border border-surface-container-high rounded flex flex-col md:flex-row gap-8 items-center justify-between group relative overflow-hidden bg-surface-container-lowest border-outline-variant">
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-primary-fixed-dim/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 md:w-2/3">
+            <span class="material-symbols-outlined text-4xl text-primary mb-6">support_agent</span>
+            <h3 class="font-headline-md text-headline-md text-charcoal mb-4">Dedicated NRI Support Desk</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">A specialized team exclusively focused on serving our international clients, understanding your unique needs, and providing white-glove service across all time zones.</p>
+          </div>
+          <div class="relative z-10 md:w-1/3 flex justify-end">
+            <a href="/contact-us.html" class="px-6 py-3 border border-charcoal text-charcoal font-button-text text-button-text uppercase tracking-widest rounded hover:bg-charcoal/10 hover:text-charcoal transition-all duration-300">
+              Contact Desk
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</BaseLayout>

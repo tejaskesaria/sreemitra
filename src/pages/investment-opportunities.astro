@@ -1,0 +1,107 @@
+---
+// investment-opportunities.astro - Investment Opportunities page
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sreemitra - Investment Opportunities" currentPath="investment-opportunities.html" description="Discover the enduring value of strategic land acquisition. Learn why land remains a tangible, finite asset class that anchors prestigious portfolios. Explore Sreemitra's investment opportunities.">
+
+  <!-- Main Content Canvas -->
+  <main class="flex-grow flex flex-col items-center w-full relative">
+    <!-- Hero Section -->
+    <section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-[120px] flex flex-col items-center text-center relative z-10">
+      <h1 class="font-urbanist text-display-lg md:text-[80px] md:leading-[88px] text-primary mb-6 max-w-4xl tracking-tight">
+        Land: Simple to Understand. Powerful to Own.
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+        Discover the enduring value of strategic land acquisition. In an increasingly complex financial landscape, land remains a tangible, finite asset class that anchors prestigious portfolios.
+      </p>
+      <div class="w-full h-[500px] mt-8 bg-surface-container-lowest border relative overflow-hidden border-outline-variant/20">
+        <div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-80 mix-blend-multiply"
+          data-alt="A sweeping aerial photograph of a vast, pristine landscape at golden hour"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLOy8A7xNH5HZrmIIBNw9V4N02fIyPEQZRgyHCWD6QJE2LBw4HPDiDEiuuw6IzKk35nG1Fe6j_fayLzMvxy4XUXrYUbBD-e_gx64r-QmIg6IvXK_zNJWRrv1utatbAPAlIfxZfPcvu-h8WX9bbF8pwyoycn0aZuXZxukrgs5jKqiRh7mkYssYCXN_KtYgk4KP5mdlH6oqzHYMm_EYJpq0LBl67kK1Sa8IDSvWaUXdNO2zuOYOtuJmR')">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface-variant/40 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Why Land Matters (Pillars) -->
+    <section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-[80px] md:py-[120px]">
+      <div class="flex flex-col items-start mb-16 md:mb-24">
+        <span class="font-label-caps text-label-caps text-brass-accent uppercase tracking-widest mb-4">The Foundation</span>
+        <h2 class="font-headline-lg text-headline-lg md:text-[56px] md:leading-[64px] text-primary max-w-3xl">
+          Why Land Still Matters
+        </h2>
+        <div class="h-px w-24 bg-brass-accent mt-8"></div>
+      </div>
+
+      <!-- Bento Grid Layout for Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-unit md:gap-4 lg:gap-6">
+        <!-- Pillar 1: Finite Supply (Large Square) -->
+        <div class="md:col-span-8 lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 border border-outline-variant/30 flex flex-col justify-between h-[400px] md:h-[480px] group hover:border-outline transition-colors duration-300">
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-low text-primary mb-8 group-hover:bg-primary group-hover:text-on-primary transition-colors duration-500">
+            <span class="material-symbols-outlined text-3xl">terrain</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Finite Supply</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              They aren't making any more of it. As populations grow and urban centers expand, well-positioned land becomes increasingly scarce. This intrinsic limitation on supply is the fundamental driver of long-term land value.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Appreciation Potential (Vertical Rectangle) -->
+        <div class="md:col-span-4 lg:col-span-5 bg-surface-container-low p-8 md:p-12 flex flex-col justify-between h-[400px] md:h-[480px]">
+          <div class="flex items-center justify-center w-12 h-12 border border-primary text-primary mb-8">
+            <span class="material-symbols-outlined">trending_up</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Appreciation Potential</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Historically, strategically located land has shown consistent, compounding appreciation. It serves as a formidable hedge against inflation, preserving purchasing power across generations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Flexible Use (Horizontal Rectangle) -->
+        <div class="md:col-span-6 lg:col-span-6 bg-surface-container-lowest p-8 md:p-10 border border-outline-variant/30 flex flex-col md:flex-row gap-8 items-start md:items-center">
+          <div class="text-brass-accent shrink-0">
+            <span class="material-symbols-outlined text-4xl">dashboard_customize</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-[28px] leading-[36px] text-primary mb-3">Flexible Use</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Raw land is a blank canvas. From agricultural development to commercial zoning or residential sub-division, owning the asset outright provides unparalleled optionality to adapt to future market demands.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Portfolio Balance (Horizontal Rectangle) -->
+        <div class="md:col-span-6 lg:col-span-6 bg-inverse-surface p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start md:items-center text-on-primary">
+          <div class="text-brass-accent shrink-0">
+            <span class="material-symbols-outlined text-4xl">account_balance</span>
+          </div>
+          <div>
+            <h3 class="font-headline-md text-headline-md text-[28px] leading-[36px] text-surface-container-lowest mb-3">Portfolio Balance</h3>
+            <p class="font-body-md text-body-md text-surface-variant">
+              Land offers low correlation to equity markets. Including tangible real estate in a diversified portfolio mitigates overall volatility, providing a bedrock of stability during turbulent economic cycles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="w-full bg-surface-container-low py-[120px] border-t border-outline-variant/20">
+      <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-12">
+        <div class="max-w-xl">
+          <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Ready to Secure Your Legacy?</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Speak with our investment advisors to explore current land acquisition opportunities tailored to your strategic goals.</p>
+        </div>
+        <a href="/contact-us.html" class="inline-block bg-charcoal text-surface-container-lowest px-10 py-5 font-label-caps text-label-caps uppercase tracking-widest shrink-0 hover:bg-primary transition-colors duration-300">
+          Schedule a Consultation
+        </a>
+      </div>
+    </section>
+  </main>
+
+</BaseLayout>

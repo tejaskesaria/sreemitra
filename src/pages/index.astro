@@ -1,16 +1,212 @@
 ---
+// index.astro - Home page
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Sreemitra - Confidence in Every Plot" currentPath="index.html">
+
+  <!-- Section 1: Hero Area -->
+  <section class="relative bg-obsidian min-h-screen flex items-center justify-center py-[200px] px-margin-mobile md:px-margin-desktop overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <div class="bg-cover bg-center w-full h-full opacity-60"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVrgdkDMVNks6KVAbJe9_E2pdDWAApNKUJvNGvsl237njuDSjiter1HkvXhBzPT3tLaoD5921lQfDDQ7AuWMkLVNRDRf6TfvFFE0JvICmdX6-M6SBszC_E-xw6rV6HlX3iS2uUthAREH0F1HmOAXW0F4o57HnoR0CbD9aa0v_UkIi0VKDuJX9GQjySrntP7m4uWpSJYH7Y53Sq7danSwC9NS4yYxBRRegSSWFrnXa6-3QjrPXSptTu')">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-obsidian/60 via-obsidian/40 to-obsidian"></div>
+    </div>
+    <div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col items-center text-center gap-12 pt-20">
+      <div class="space-y-4">
+        <h1 class="font-urbanist font-bold text-[64px] md:text-[88px] text-surface-container-lowest leading-[1.1] tracking-tight max-w-5xl">
+          Confidence in Every Project.<br /><span class="text-muted-gold italic font-normal">Clarity in Every Promise.</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-surface-variant/90 max-w-2xl mx-auto">
+          Plots & townships in Hyderabad & Visakhapatnam, developed since 1994. Approvals & title papers shared before you book.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-6">
+        <a href="/projects.html" class="inline-block bg-muted-gold text-obsidian font-label-md text-label-md uppercase tracking-widest px-10 py-5 rounded-full hover:bg-surface-container-lowest transition-all duration-300 shadow-xl">Explore Projects</a>
+        <a href="/contact-us.html" class="inline-block bg-transparent border border-surface-variant/50 text-surface-container-lowest font-label-md text-label-md uppercase tracking-widest px-10 py-5 rounded-full hover:bg-surface-container-lowest/10 transition-all duration-300">Talk to Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-surface py-20 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2">
+      <!-- Card 1: Stat (Top Left) -->
+      <div class="bg-surface-container-low flex flex-col justify-between p-12 aspect-square md:aspect-auto md:h-[400px] relative overflow-hidden">
+        <div class="font-display-lg text-[64px] md:text-[88px] text-obsidian leading-none stat-counter" data-target="30" data-suffix="+">30+</div>
+        <div class="font-label-md text-label-md text-outline uppercase tracking-widest mt-auto">Years in real estate</div>
+        <div class="absolute top-0 right-0 opacity-5 pointer-events-none">
+          <svg height="300" viewbox="0 0 100 100" width="300">
+            <circle cx="70" cy="30" fill="none" r="40" stroke="currentColor" stroke-width="0.5"></circle>
+            <circle cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="0.5"></circle>
+          </svg>
+        </div>
+      </div>
+      <!-- Card 2: Image (Top Right) -->
+      <div class="h-[400px] relative overflow-hidden">
+        <img alt="Luxury property landscape" class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVrgdkDMVNks6KVAbJe9_E2pdDWAApNKUJvNGvsl237njuDSjiter1HkvXhBzPT3tLaoD5921lQfDDQ7AuWMkLVNRDRf6TfvFFE0JvICmdX6-M6SBszC_E-xw6rV6HlX3iS2uUthAREH0F1HmOAXW0F4o57HnoR0CbD9aa0v_UkIi0VKDuJX9GQjySrntP7m4uWpSJYH7Y53Sq7danSwC9NS4yYxBRRegSSWFrnXa6-3QjrPXSptTu" />
+      </div>
+      <!-- Card 3: Image (Bottom Left) -->
+      <div class="h-[400px] relative overflow-hidden order-last md:order-none">
+        <img alt="Sunset over developed land" class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWrwzoBPptKUyabZ3FfCpjCrI0tI9Uf2VpI_Jg0Mt60WxlLYP-QndiK8NCG7ka3fnRp2ADzLHAUuQDgaLxujqQmrU9HIm2WG8skjKiWgGeSveW55Q75wfabT6HfLM9_EADbgTitPVd7zHt5ezI1bY9jLP00RERiIGEK4CMevXa8RSDrrNrOQSUbVD5byVYj2o4PpcmrGM1-jSUMvKBtdSgPM6Wx4T2g666nZJZKmEtQ9gYNeEuycR" />
+      </div>
+      <!-- Card 4: Stat (Bottom Right) -->
+      <div class="bg-surface-container-low flex flex-col justify-between p-12 aspect-square md:aspect-auto md:h-[400px] relative overflow-hidden">
+        <div class="font-display-lg text-[64px] md:text-[88px] text-obsidian leading-none stat-counter" data-target="10" data-suffix="L+">0L+</div>
+        <div class="font-label-md text-label-md text-outline uppercase tracking-widest mt-auto text-right">Customers engaged</div>
+        <div class="absolute bottom-0 left-0 opacity-5 pointer-events-none">
+          <svg height="300" viewbox="0 0 100 100" width="300">
+            <circle cx="30" cy="70" fill="none" r="40" stroke="currentColor" stroke-width="0.5"></circle>
+            <circle cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="0.5"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Sreemitra -->
+  <section class="bg-surface pt-section-gap pb-section-gap px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
+        <div class="max-w-xl">
+          <h2 class="font-headline-lg text-headline-lg text-obsidian mb-4">Why Sreemitra.<br /><span class="italic text-muted-gold font-normal">Why Now.</span></h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Designed around your needs. Curated listings. Only the best properties, no clutter. Transparent Pricing: No hidden fees.</p>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-5/12 h-[260px] md:h-[280px] rounded-2xl overflow-hidden shadow-lg border border-outline-variant/30 relative">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMCdb0rMpdAKTaoDV4VMYpK0gsf10DXsfJo6aH8o_32kRSkmoLLtjtGeiknm6HBSFnSHLHR5AQg18PyFhJCQa3Q64tJU5bhF-sMIgvt7GJfSShXpAceKrEcvE22oWJZQFCKjvfx3V19YjNhXDRHxPCCMLdCrKv0H-dFyStSY_Djw1UewpVWNRRe7u5x6NTNb4g44vUNQFhpqynD_zuYYEJPncj60uJb6xo39NLgoW4hiWWO0s_Sw_i"
+            alt="Sreemitra Land Development & Plot Layout"
+            class="w-full h-full object-cover">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter border-t border-surface-dim pt-12">
+        <!-- Reason 1 -->
+        <div class="flex flex-col gap-4">
+          <span class="font-headline-md text-headline-md text-[#0c3c46] font-bold mb-2">01</span>
+          <h3 class="font-headline-md text-[24px] text-obsidian leading-tight">Proven Legacy</h3>
+          <p class="text-on-surface-variant text-body-md font-body-md mt-2">Decades of consistent delivery and trust-building in the dynamic real estate landscape.</p>
+        </div>
+        <!-- Reason 2 -->
+        <div class="flex flex-col gap-4">
+          <span class="font-headline-md text-headline-md text-[#0c3c46] font-bold mb-2">02</span>
+          <h3 class="font-headline-md text-[24px] text-obsidian leading-tight">Growth-Focused</h3>
+          <p class="text-on-surface-variant text-body-md font-body-md mt-2">Strategically identifying and acquiring lands in the fastest appreciating corridors.</p>
+        </div>
+        <!-- Reason 3 -->
+        <div class="flex flex-col gap-4">
+          <span class="font-headline-md text-headline-md text-[#0c3c46] font-bold mb-2">03</span>
+          <h3 class="font-headline-md text-[24px] text-obsidian leading-tight">Clean Deals</h3>
+          <p class="text-on-surface-variant text-body-md font-body-md mt-2">100% legal transparency with rigorous documentation and clear titles guaranteed.</p>
+        </div>
+        <!-- Reason 4 -->
+        <div class="flex flex-col gap-4">
+          <span class="font-headline-md text-headline-md text-[#0c3c46] font-bold mb-2">04</span>
+          <h3 class="font-headline-md text-[24px] text-obsidian leading-tight">End-to-End Support</h3>
+          <p class="text-on-surface-variant text-body-md font-body-md mt-2">From initial consultation to final registration, our experts guide you at every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Invest Where Growth Is Moving -->
+  <section class="bg-obsidian py-section-gap px-margin-mobile md:px-margin-desktop overflow-hidden">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-5 flex flex-col gap-8">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg text-surface-container-lowest mb-6">Invest Where <br /><span class="italic text-muted-gold font-normal">Growth Is Moving</span></h2>
+          <p class="font-body-lg text-body-lg text-surface-variant">We don't just sell land; we secure your position in tomorrow's premium economic zones. Our developments align precisely with major infrastructure expansions.</p>
+        </div>
+        <ul class="space-y-6">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-muted-gold mt-1">check</span>
+            <span class="font-body-md text-body-md text-surface-container-lowest">Expanding Highway Networks</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-muted-gold mt-1">check</span>
+            <span class="font-body-md text-body-md text-surface-container-lowest">Emerging Industrial Corridors</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-muted-gold mt-1">check</span>
+            <span class="font-body-md text-body-md text-surface-container-lowest">Proposed IT & Tech Hubs</span>
+          </li>
+        </ul>
+        <div class="pt-8">
+          <a href="/projects.html" class="inline-block bg-muted-gold text-obsidian font-label-md text-label-md uppercase tracking-widest px-8 py-4 rounded hover:bg-surface-container-lowest hover:text-obsidian transition-all duration-300">See Projects in Key Corridors</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 relative h-[600px]">
+        <div class="absolute inset-0 rounded-xl overflow-hidden shadow-2xl border border-surface-variant/10">
+          <div class="bg-cover bg-center w-full h-full opacity-80" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATvJRJDXp_7t371WZBndNc0KPt-jXICXmjIPK6ymYBY8vyj4mCw-AV90EE2CQp2DOYYAdd1PVZ-cVJxCiICLuievqp2nyEpg0vLdlNZDPiseKflfcdmFYCgUVk_9JbY07yCpgXjYnNddarLn0QTRo0SHHEFWmGPjKspTbycn9sSrPMM-F8-r6CldgMWtlql5grTUtO-Iqe_5ZK0j-ZgCBjKCb48sTGWDK5LRmRQlIdKLomiq1Ot-4-y')"></div>
+          <div class="absolute inset-0 bg-obsidian/20 mix-blend-multiply"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Featured Projects -->
+  <section class="bg-surface-container-lowest py-section-gap px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-surface-container pb-8">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg text-obsidian mb-2">Featured Developments</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Premium plots in high-potential zones.</p>
+        </div>
+        <a class="hidden md:flex font-label-md text-label-md uppercase tracking-widest text-obsidian hover:text-muted-gold transition-colors items-center gap-2 mt-6 md:mt-0" href="/projects.html">Explore All Properties <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- Project Card 1 -->
+        <div class="flex flex-col group cursor-pointer">
+          <div class="relative h-[400px] overflow-hidden mb-6">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              data-alt="A high-quality, sunlit photograph of a beautifully landscaped residential plot layout."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG8QKQeUastAaLtipEbakrGbvCd66u70Z2AvKF5Yz-Ab9O3vJDzlN1mRs7bsbvXCLxO9GD2-8MpLd8t-G44b89gFIRJxsHBNKaan8tx3VkGPJgOA1ofzXs9_FfPeCfb35lVHSXVZIb44q9poOdTw4T0-by0az_GGrXRYetQANqGZvOtueVHoHo-zQE4vshsjMGgL7f8w15BV_dbrQyjTgLV8yQu6y8wBc_sxBdGMCRGwNDKxlSPNu9" />
+            <div class="absolute top-6 left-6 bg-surface-container-lowest/90 backdrop-blur-sm text-obsidian font-label-md text-label-md uppercase tracking-widest px-4 py-2">DTCP APPROVED</div>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-obsidian mb-2 group-hover:text-muted-gold transition-colors">Sovereign Park</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Near NH-16, Visakhapatnam</p>
+          <p class="font-label-sm text-label-sm text-outline border-l-2 border-muted-gold pl-4">5 mins from proposed IT hub</p>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="flex flex-col group cursor-pointer mt-0 md:mt-12">
+          <div class="relative h-[400px] overflow-hidden mb-6">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              data-alt="An expansive view of an elite land development project at twilight."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFWrwzoBPptKUyabZ3FfCpjCrI0tI9Uf2VpI_Jg0Mt60WxlLYP-QndiK8NCG7ka3fnRp2ADzLHAUuQDgaLxujqQmrU9HIm2WG8skjKiWgGeSveW55Q75wfabT6HfLM9_EADbgTitPVd7zHt5ezI1bY9jLP00RERiIGEK4CMevXa8RSDrrNrOQSUbVD5byVYj2o4PpcmrGM1-jSUMvKBtdSgPM6Wx4T2g666nZJZKmEtQ9gYNeEuycR" />
+            <div class="absolute top-6 left-6 bg-surface-container-lowest/90 backdrop-blur-sm text-obsidian font-label-md text-label-md uppercase tracking-widest px-4 py-2">HMDA APPROVED</div>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-obsidian mb-2 group-hover:text-muted-gold transition-colors">Golden Enclave</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Shamshabad, Hyderabad</p>
+          <p class="font-label-sm text-label-sm text-outline border-l-2 border-muted-gold pl-4">Adjacent to Outer Ring Road</p>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="flex flex-col group cursor-pointer">
+          <div class="relative h-[400px] overflow-hidden mb-6">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              data-alt="A modern, architectural perspective of a plotted development's central park area."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5LlFdebmIDqpdI1n6QDMxy4QURZwoGrhZfoYmM6lcu6BahvxKLalkqY5fCl_5HKHb9DN7c-1sD3N4jLSuvogpNxxZIh58XpuEO3HSqnoE-qVnFx4ZwLrwI1ZMBESJGU95HNKs5a_g_83ptmclQJ1ZaP25sdr0x-0Qup3tQyE3dFJKUFin23NFUEUz6nePcv_HY4_-zL6I1rZp9Wp7T1t0q1tVpJjZJG_p8UDNFGdsSwW9C67RoWHq" />
+            <div class="absolute top-6 left-6 bg-surface-container-lowest/90 backdrop-blur-sm text-obsidian font-label-md text-label-md uppercase tracking-widest px-4 py-2">DTCP APPROVED</div>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-obsidian mb-2 group-hover:text-muted-gold transition-colors">Heritage Valley</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">Gannavaram, Vijayawada</p>
+          <p class="font-label-sm text-label-sm text-outline border-l-2 border-muted-gold pl-4">10 mins from Airport expansion</p>
+        </div>
+      </div>
+      <a class="md:hidden flex font-label-md text-label-md uppercase tracking-widest text-obsidian hover:text-muted-gold transition-colors items-center gap-2 mt-12 justify-center" href="/projects.html">Explore All Properties <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+  </section>
+
+  <!-- Section 5: Final CTA -->
+  <section class="bg-obsidian py-[160px] px-margin-mobile md:px-margin-desktop text-center border-t border-surface-variant/10">
+    <div class="max-w-3xl mx-auto flex flex-col items-center gap-8">
+      <h2 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-surface-container-lowest leading-tight">Your Next Investment Could Be <br /><span class="italic text-muted-gold font-normal">Tomorrow's Landmark.</span></h2>
+      <p class="font-body-lg text-body-lg text-surface-variant max-w-xl">Home, investment, or legacy. Choose land that grows with the region. Partner with Sreemitra for a secure and transparent journey.</p>
+      <div class="flex flex-col sm:flex-row gap-6 mt-8">
+        <button class="bg-muted-gold text-obsidian font-label-md text-label-md uppercase tracking-widest px-8 py-4 rounded hover:bg-surface-container-lowest transition-all duration-300">Browse All Projects</button>
+        <button class="bg-transparent border border-surface-variant text-surface-container-lowest font-label-md text-label-md uppercase tracking-widest px-8 py-4 rounded hover:bg-surface-container-lowest hover:text-obsidian transition-all duration-300">Schedule a Visit</button>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

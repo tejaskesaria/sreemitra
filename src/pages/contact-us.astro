@@ -1,0 +1,129 @@
+---
+// contact-us.astro - Contact Us page
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sreemitra - Contact Us" currentPath="contact-us.html" description="Get in touch with Sreemitra's expert team for investment advice, project information, or to schedule a visit to our premium plotted developments.">
+
+  <!-- Main Content -->
+  <main class="pt-[140px] pb-24 md:pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <!-- Hero Section -->
+    <section class="mb-20 md:mb-32 max-w-3xl">
+      <h1 class="font-urbanist text-display-lg text-on-background mb-6">Let's Find the Right Plot for You.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        Whether you're looking for an investment opportunity or a place to build your future home, our team of experts is here to guide you through our premium plotting projects.
+      </p>
+    </section>
+
+    <!-- Bento Grid Layout for Contact Info & Form -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+      <!-- Contact Details (Left Column) -->
+      <div class="lg:col-span-4 flex flex-col gap-8">
+        <!-- Office Card -->
+        <div class="bg-surface-container-lowest p-8 md:p-10 border border-outline-variant h-full flex flex-col justify-between">
+          <div>
+            <h2 class="font-headline-md text-headline-md text-charcoal mb-8">Head Office</h2>
+            <div class="flex items-start gap-4 mb-8">
+              <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+              <div>
+                <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-2">Address</h3>
+                <p class="font-body-md text-body-md text-charcoal leading-relaxed">
+                  Sreemitra Estates Pvt Ltd.<br>
+                  Khairtabad, Hyderabad,<br>
+                  Telangana, India
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 mb-8">
+              <span class="material-symbols-outlined text-primary mt-1">call</span>
+              <div>
+                <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-2">Phone</h3>
+                <p class="font-body-md text-body-md text-charcoal">
+                  +91 40 1234 5678<br>
+                  +91 98765 43210
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="material-symbols-outlined text-primary mt-1">mail</span>
+              <div>
+                <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-2">Email</h3>
+                <p class="font-body-md text-body-md text-charcoal">
+                  info@sreemitra.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form (Right Column) -->
+      <div class="lg:col-span-8">
+        <div class="bg-surface-container-lowest p-8 md:p-16 border border-outline-variant">
+          <form class="flex flex-col gap-10">
+            <!-- Enquiry Type -->
+            <div>
+              <h3 class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant mb-6">I am interested in</h3>
+              <div class="flex flex-wrap gap-8">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input checked class="custom-radio" name="enquiry_type" type="radio" value="callback">
+                  <span class="font-body-md text-body-md text-charcoal group-hover:text-primary transition-colors">Request a Call Back</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="custom-radio" name="enquiry_type" type="radio" value="visit">
+                  <span class="font-body-md text-body-md text-charcoal group-hover:text-primary transition-colors">Book an Office Visit</span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input class="custom-radio" name="enquiry_type" type="radio" value="nri">
+                  <span class="font-body-md text-body-md text-charcoal group-hover:text-primary transition-colors">NRI Enquiry</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Personal Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+              <div class="flex flex-col">
+                <label class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant sr-only" for="first_name">First Name</label>
+                <input class="input-underline font-body-md text-body-md text-charcoal w-full" id="first_name" placeholder="First Name" required type="text">
+              </div>
+              <div class="flex flex-col">
+                <label class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant sr-only" for="last_name">Last Name</label>
+                <input class="input-underline font-body-md text-body-md text-charcoal w-full" id="last_name" placeholder="Last Name" required type="text">
+              </div>
+              <div class="flex flex-col">
+                <label class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant sr-only" for="phone">Phone Number</label>
+                <input class="input-underline font-body-md text-body-md text-charcoal w-full" id="phone" placeholder="Phone Number" required type="tel">
+              </div>
+              <div class="flex flex-col">
+                <label class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant sr-only" for="email">Email Address</label>
+                <input class="input-underline font-body-md text-body-md text-charcoal w-full" id="email" placeholder="Email Address" type="email">
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col mt-4">
+              <label class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant sr-only" for="message">Message (Optional)</label>
+              <textarea class="input-underline font-body-md text-body-md text-charcoal w-full resize-none" id="message" placeholder="Tell us more about what you're looking for (Optional)" rows="4"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mt-8 flex justify-end">
+              <button class="bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-widest px-10 py-5 hover:bg-surface-tint transition-colors duration-300" type="submit">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Breakout -->
+    <div class="mt-24 md:mt-32 w-full h-[400px] md:h-[600px] border border-outline-variant bg-surface-container-high overflow-hidden">
+      <div class="bg-cover bg-center w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+        data-alt="A serene, high-end architectural photograph of an empty, meticulously landscaped premium residential plot at dawn."
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMCdb0rMpdAKTaoDV4VMYpK0gsf10DXsfJo6aH8o_32kRSkmoLLtjtGeiknm6HBSFnSHLHR5AQg18PyFhJCQa3Q64tJU5bhF-sMIgvt7GJfSShXpAceKrEcvE22oWJZQFCKjvfx3V19YjNhXDRHxPCCMLdCrKv0H-dFyStSY_Djw1UewpVWNRRe7u5x6NTNb4g44vUNQFhpqynD_zuYYEJPncj60uJb6xo39NLgoW4hiWWO0s_Sw_i')">
+      </div>
+    </div>
+  </main>
+
+</BaseLayout>
